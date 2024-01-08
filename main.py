@@ -12,6 +12,9 @@ def ip_to_bin():
     ip = input("\nIP to convert: ")
     sleep(1)
 
+    for_rule = list(str(range(1, 10)))
+    for_rule.append(".")
+
     if ip == "99":
         print("Exiting!")
         exit()
@@ -21,7 +24,7 @@ def ip_to_bin():
 
     else:
         for _ in input_slice(ip):
-            if not _ in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "."]:
+            if not _ in for_rule:
                 print("\nThis is not an IP")
                 break
             else:
@@ -48,7 +51,7 @@ def bin_to_ip():
 
     elif bin_code == "110010 110101 110101 101110 110010 110101 110101 101110 110010 110101 110101 101110 110010 110101 110101":
         print(f"\nBinary Code : {bin_code} \n\nIp          : 255.255.255.255 (Broadcast IP)")
-        
+
     else:
         for _ in input_slice(bin_code):
             if not _ in ["1", "0", " "]:
