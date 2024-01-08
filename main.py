@@ -1,3 +1,4 @@
+
 from time import sleep
 
 
@@ -18,6 +19,9 @@ def ip_to_bin():
     if ip == "99":
         print("Exiting!")
         exit()
+
+    elif ip == " ":
+        print("Enter an IP")
 
     elif not 7 <= len(ip) <= 15:
         print("\nThis IP is Invalid")
@@ -42,19 +46,26 @@ def bin_to_ip():
     bin_code = input("\nBinary Code to convert: ")
     sleep(1)
 
+    check_list = ["1", "0", " "]
+
+    broad = "110010 110101 110101 101110 110010 110101 110101 101110 110010 110101 110101 101110 110010 110101 110101"
+
     if bin_code == "99":
         print("Exiting!")
         exit()
 
+    elif bin_code == " ":
+        print("Enter a Binary Code")
+
     elif not 48 <= len(bin_code) <= 109:
         print("\nThis is for an invalid ip")
 
-    elif bin_code == "110010 110101 110101 101110 110010 110101 110101 101110 110010 110101 110101 101110 110010 110101 110101":
+    elif bin_code == broad:
         print(f"\nBinary Code : {bin_code} \n\nIp          : 255.255.255.255 (Broadcast IP)")
 
     else:
         for _ in input_slice(bin_code):
-            if not _ in ["1", "0", " "]:
+            if not _ in check_list:
                 print("\nThis is not a Binary Code")
                 break
             else:
@@ -87,6 +98,9 @@ while True:
         elif mode == "99":
             print("Exiting!")
             exit()
+
+        elif mode == " ":
+            print("Enter a Valid Number")
 
     except KeyboardInterrupt:
         print("Alright!")
