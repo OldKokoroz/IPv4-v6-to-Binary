@@ -99,7 +99,7 @@ while True:
             print("Exiting!")
             exit()
 
-        elif mode == " ":
+        elif mode == " " or "":
             print("Enter a Valid Number")
 
     except KeyboardInterrupt:
